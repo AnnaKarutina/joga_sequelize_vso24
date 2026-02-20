@@ -6,15 +6,21 @@ module.exports = {
     await queryInterface.bulkInsert('Authors', [
       {
         id: 1,
-        name: 'Ashley Galvin'
+        name: 'Ashley Galvin',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         id: 2,
-        name: 'Patrick Beach'
+        name: 'Patrick Beach',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         id: 3,
-        name: 'MacKenzie Miller'
+        name: 'MacKenzie Miller',
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
     ]);
   },
