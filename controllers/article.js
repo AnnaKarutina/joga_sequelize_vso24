@@ -1,4 +1,4 @@
-const { Article, Author } = require('../models/');
+const { Article, Author, Tag, ArticleTag } = require('../models/');
 
 const getAllArticles = async (req, res) => {
   try {
@@ -16,7 +16,11 @@ const getArticleBySlug = async (req, res) => {
         where: {
             slug: req.params.slug 
         }, 
-        include: Author
+        include: [{
+            model: Author
+        }, { 
+            model: Tag, through: ArticleTag 
+        }]
     });
     if (article) {
       res.status(200).json(article);
